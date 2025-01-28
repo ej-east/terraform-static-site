@@ -16,7 +16,6 @@ module "s3" {
   bucket_name    = var.bucket_name
   region         = var.region
   file_path      = var.file_path
-  file_key       = var.file_key
   index_document = "index.html"
   error_document = "error.html"
   acl            = "public-read"
