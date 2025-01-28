@@ -1,6 +1,6 @@
 output "bucket_website_endpoint" {
   description = "The websites endpoint for the S3 Bucket"
-  value       = aws_s3_bucket.static.website_endpoint
+  value       = aws_s3_bucket_website_configuration.static.website_endpoint
 }
 
 output "bucket_id" {
@@ -19,6 +19,6 @@ output "bucket_name" {
 }
 
 output "object_url" {
-  description = "URL of Object"
-  value       = aws_s3_object.website_files.website_redirect
+  description = "Map of URL of Object"
+  value       = { for key, value in aws_s3_object.website_files : key => value.website_redirect }
 }
