@@ -1,0 +1,1 @@
+bucket_name = "ej-cool-bucket"
