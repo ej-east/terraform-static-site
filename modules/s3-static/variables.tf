@@ -15,11 +15,6 @@ variable "file_path" {
   default     = "uploads"
 }
 
-variable "file_key" {
-  description = "S3 object key"
-  type        = string
-}
-
 variable "index_document" {
   description = "Index document for static S3 site"
   type        = string

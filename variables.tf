@@ -14,9 +14,3 @@ variable "file_path" {
   type        = string
   default     = "uploads"
 }
-
-variable "file_key" {
-  description = "The file key of the S3 bucket"
-  type        = string
-  default     = "index.html"
-}
