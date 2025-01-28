@@ -2,6 +2,10 @@ provider "aws" {
   region = var.region
 }
 
+#######################
+#     Bucket Setup    #
+#######################
+
 resource "aws_s3_bucket" "static" {
   bucket = var.bucket_name
 }
@@ -23,6 +27,7 @@ resource "aws_s3_bucket_acl" "static_bucket_acl" {
   acl    = var.acl
 }
 
+#Defining Bucket Policy 
 resource "aws_s3_bucket_policy" "static" {
   bucket = aws_s3_bucket.static.id
   policy = jsonencode({
@@ -40,6 +45,9 @@ resource "aws_s3_bucket_policy" "static" {
 
 }
 
+#######################
+#     Upload Files    #
+#######################
 resource "aws_s3_object" "website_files" {
   for_each = fileset(var.file_path, "*")
 
@@ -65,6 +73,4 @@ resource "aws_s3_object" "website_files" {
   }, each.value, "application/octet-stream")
 
   etag = filemd5("${var.file_path}/${each.value}")
-
-
 }
