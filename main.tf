@@ -18,6 +18,6 @@ module "s3" {
   file_path      = var.file_path
   index_document = "index.html"
   error_document = "error.html"
-  acl            = "public-read"
+  acl            = var.acl
 }
 

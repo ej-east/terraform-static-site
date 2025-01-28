@@ -14,3 +14,8 @@ variable "file_path" {
   type        = string
   default     = "uploads"
 }
+
+variable "acl" {
+  description = "The ACL of the S3 bucket"
+  type        = string
+}
