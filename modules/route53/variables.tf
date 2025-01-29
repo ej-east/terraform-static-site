@@ -5,21 +5,15 @@ variable "zone_id" {
 
 variable "record_name" {
   description = "The DNS record name"
-  type = string
+  type        = string
 }
 
 variable "alias_target" {
   description = "The DNS name of the alias target"
-  type = string
+  type        = string
 }
 
 variable "alias_id_zone" {
   description = "The zone ID of the alias target"
-  type = string
-}
-
-variable "tags" {
-  description = "Tags that apply to the Route53 record"
-  type = map(string)
-  default = {}
+  type        = string
 }
