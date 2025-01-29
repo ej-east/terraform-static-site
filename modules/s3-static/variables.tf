@@ -32,4 +32,9 @@ variable "acl" {
   type        = string
   default     = "public-read"
 }
-#  file_key index_document  error_document acl
+
+variable "tags" {
+  description = "A map of tags to add to all resources"
+  type        = map(string)
+  default     = {}
+}

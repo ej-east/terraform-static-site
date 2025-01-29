@@ -23,3 +23,8 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "default_root_object" {
+  description = "Index Page for CDN"
+  type = string
+}
