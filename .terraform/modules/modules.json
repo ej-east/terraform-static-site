@@ -1,1 +1,0 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"acm","Source":"./modules/acm","Dir":"modules/acm"},{"Key":"cdn","Source":"./modules/cdn","Dir":"modules/cdn"},{"Key":"route53","Source":"./modules/route53","Dir":"modules/route53"},{"Key":"s3","Source":"./modules/s3-static","Dir":"modules/s3-static"}]}
