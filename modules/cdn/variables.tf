@@ -26,5 +26,5 @@ variable "tags" {
 
 variable "default_root_object" {
   description = "Index Page for CDN"
-  type = string
+  type        = string
 }

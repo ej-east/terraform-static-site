@@ -22,27 +22,27 @@ variable "acl" {
 
 variable "index_document" {
   description = "The index document"
-  type = string
+  type        = string
 }
 
 variable "domain_name" {
   description = "The domain name of the certificate"
-  type = string
+  type        = string
 }
 
 variable "validation_method" {
   description = "How to validate the certificate"
-  type = string
-  default = "DNS"
+  type        = string
+  default     = "DNS"
 }
 
 variable "zone_id" {
   description = "The zone id of the certificate"
-  type = string
+  type        = string
 }
 
 variable "tags" {
   description = "Tags for the S3 Site"
-  type = map(string)
-  default = {}
+  type        = map(string)
+  default     = {}
 }

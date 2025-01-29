@@ -24,7 +24,7 @@ module "s3" {
 }
 
 module "acm" {
-  source = "./modules/acm"
+  source            = "./modules/acm"
   domain_name       = var.domain_name
   validation_method = var.validation_method
   zone_id           = var.zone_id
@@ -33,20 +33,20 @@ module "acm" {
 }
 
 module "cdn" {
-  source                = "./modules/cdn"
-  origin_domain_name    = module.s3.bucket_website_endpoint
+  source                 = "./modules/cdn"
+  origin_domain_name     = module.s3.bucket_website_endpoint
   origin_access_identity = module.s3.bucket_id
-  domain_name           = var.domain_name
-  certificate_arn       = module.acm.certificate_arn
-  default_root_object   = module.s3.bucket_website_endpoint
+  domain_name            = var.domain_name
+  certificate_arn        = module.acm.certificate_arn
+  default_root_object    = module.s3.bucket_website_endpoint
 
   tags = var.tags
 }
 
 module "route53" {
-  source = "./modules/route53"
-  zone_id = var.zone_id
-  record_name = var.domain_name
-  alias_target = module.cdn.cloudfront_domain_name
+  source        = "./modules/route53"
+  zone_id       = var.zone_id
+  record_name   = var.domain_name
+  alias_target  = module.cdn.cloudfront_domain_name
   alias_id_zone = module.cdn.cloudfront_zone_id
 }
