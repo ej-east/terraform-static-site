@@ -8,7 +8,7 @@ resource "aws_route53_record" "www" {
     zone_id                = var.alias_id_zone
     evaluate_target_health = true
   }
-  
+
   ttl     = 300
   records = []
 }
